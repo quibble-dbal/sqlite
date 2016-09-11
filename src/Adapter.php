@@ -37,29 +37,19 @@ class Adapter extends Dabble\Adapter
         return parent::value($value);
     }
 
-    public function interval($quantity, $amount)
+    public function interval($unit, $amount) : Dabble\Raw
     {
-        $what = null;
-        switch ($quantity) {
-            case self::SECOND: $what = 'second'; break;
-            case self::MINUTE: $what = 'minute'; break;
-            case self::HOUR: $what = 'hour'; break;
-            case self::DAY: $what = 'day'; break;
-            case self::WEEK: $what = 'week'; break;
-            case self::MONTH: $what = 'month'; break;
-            case self::YEAR: $what = 'year'; break;
-        }
-        return sprintf("interval %d %s", $amount, $what);
+        return new Dabble\Raw("datetime('now', '$unit {$amount}s");
     }
 
-    public function random()
+    public function random() : Dabble\Raw
     {
-        return 'RANDOM()';
+        return new Dabble\Raw('RANDOM()');
     }
 
-    public function now()
+    public function now() : Dabble\Now
     {
-        return new Dabble\Raw('CURRENT_TIMESTAMP');
+        return new Now;
     }
 }
 
