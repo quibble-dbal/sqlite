@@ -37,19 +37,19 @@ class Adapter extends Dabble\Adapter
         return parent::value($value);
     }
 
-    public function interval($unit, $amount) : Dabble\Raw
+    public function interval($unit, $amount) : string
     {
-        return new Dabble\Raw("datetime('now', '$unit {$amount}s");
+        return "datetime('now', '$unit {$amount}s";
     }
 
-    public function random() : Dabble\Raw
+    public function random() : string
     {
-        return new Dabble\Raw('RANDOM()');
+        return 'RANDOM()';
     }
 
-    public function now() : Dabble\Now
+    public function now() : string
     {
-        return new Now;
+        return 'CURRENT_TIMESTAMP';
     }
 }
 
