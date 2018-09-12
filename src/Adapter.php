@@ -15,18 +15,9 @@ use Quibble\Dabble;
 /** SqLite-abstraction class. */
 class Adapter extends Dabble\Adapter
 {
-    public function __construct(
-        $dsn,
-        $username = null,
-        $password = null,
-        array $options = []
-    ) {
-        return parent::__construct(
-            "sqlite:$dsn",
-            $username,
-            $password,
-            $options
-        );
+    public function __construct($dsn, $username = null, $password = null, array $options = [])
+    {
+        return parent::__construct("sqlite:$dsn", $username, $password, $options);
     }
 
     public function value($value)
