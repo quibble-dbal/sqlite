@@ -10,11 +10,11 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
-        "quibble/dabble": "^2.0.1"
+        "php": ">=8.2",
+        "quibble/dabble": "^2.2.2"
     },
     "require-dev": {
-        "gentry/gentry": "^0.10.2"
+        "gentry/gentry": "^0.16.12"
     },
     "autoload": {
         "psr-4": {
